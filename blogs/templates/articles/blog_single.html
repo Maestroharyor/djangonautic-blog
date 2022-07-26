@@ -1,0 +1,20 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<div class="max-w-[900px] mx-auto py-10">
+    <div class="text-center">
+            <p className="mb-3 w-full">{{blog.date}}</p>
+            <h1 class="mb-7 text-3xl font-bold">{{blog.title}}</h1>
+    </div>
+
+    <main class="">
+        <img src="/{{blog.thumb}}" alt="" srcset="" class="max-w-[600px] mx-auto h-auto border-[5px] shadow rounded mb-5">
+        <div class="text-lg">
+            {{blog.body}}
+        </div>
+
+        
+    </main>
+</div>
+
+{% endblock %}

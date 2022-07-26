@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% load tailwind_tags %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% tailwind_css %}
+    <title>Document</title>
+</head>
+
+<body class="bg-[#0f121f]">
+    <header class="flex py-3 items-center gap-5 justify-between max-w-[1000px] mx-auto border-b-2">
+        
+<a href="{% url 'blog_list' %}">
+    <img src="{% static 'blogger_logo.svg' %}" alt="" class="w-[50px] h-auto" style="width: 40px;">
+</a>
+        
+        <nav>
+            <ul class="inline-flex gap-3">
+                <li><a href="/" class="hover:text-yellow-300">Home</a></li>
+                <li><a href="/about/" class="hover:text-yellow-300">About</a></li>
+                <li><a href="/blog/" class="hover:text-yellow-300">Blog</a></li>
+                <li><a href="/contact/" class="hover:text-yellow-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
